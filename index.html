@@ -75,16 +75,19 @@
         const res = await fetch("https://bleshodja.github.io/data-buttons.json");
         const json = await res.json();
 
-        container.innerHTML = ""; // Clear loading text
+        container.innerHTML = "";
 
         json.forEach(btn => {
           if (btn.name && Array.isArray(btn.htmlurl)) {
             const button = document.createElement("button");
             button.textContent = btn.name;
-            button.onclick = () => {
-              const base = "https://bleshodja.github.io";
-              const path = btn.htmlurl[0][0]; // like "/minecraft.html"
-              window.location.href = base + path;
+            button.onclick = async () => {
+              const path = btn.htmlurl[0][0]; // e.g., /minecraft.html
+              const response = await fetch("https://bleshodja.github.io" + path);
+              const html = await response.text();
+              document.open();
+              document.write(html);
+              document.close();
             };
             container.appendChild(button);
           }
