@@ -2,34 +2,72 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>👌 Wall</title>
+  <title>Cyan</title>
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background: white;
-      color: black;
-      font-size: 16px;
-      line-height: 16px;
-      font-family: sans-serif;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 100px 20px 20px;
     }
-    pre {
-      margin: 0;
-      white-space: pre;
+    h1 {
+      background: linear-gradient(to right, darkcyan, cyan);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 4em;
+      margin-bottom: 20px;
+    }
+    .buttons {
+      margin-top: 20px;
+    }
+    button {
+      background-color: mediumcyan;
+      background-color: #00bcd4;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      margin: 5px;
+      font-size: 1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background-color: #0097a7;
     }
   </style>
 </head>
 <body>
-  <pre id="emojiWall"></pre>
+  <h1>Cyan</h1>
+  <div class="buttons" id="buttonContainer">Loading buttons...</div>
+
   <script>
-    const emoji = '👌';
-    const fontSize = 16;
-    const rows = Math.floor(window.innerHeight / fontSize);
-    const cols = Math.floor(window.innerWidth / fontSize);
-    const wall = Array.from({ length: rows }, () => emoji.repeat(cols)).join('\n');
-    document.getElementById('emojiWall').textContent = wall;
+    (async () => {
+      const container = document.getElementById("buttonContainer");
+      try {
+        const res = await fetch("https://bleshodja.github.io/data-buttons.json");
+        const json = await res.json();
+
+        container.innerHTML = ""; // Clear loading text
+
+        json.forEach(btn => {
+          if (btn.name && Array.isArray(btn.htmlurl)) {
+            const button = document.createElement("button");
+            button.textContent = btn.name;
+            button.onclick = () => {
+              const origin = location.origin; // e.g., https://cyanstudiosdev.github.io
+              const path = btn.htmlurl[0][0]; // e.g., /minecraft.html
+              location.href = origin + path;
+            };
+            container.appendChild(button);
+          }
+        });
+      } catch (e) {
+        container.innerHTML = "<p style='color:red;'>Failed to load buttons.</p>";
+        console.error(e);
+      }
+    })();
   </script>
 </body>
 </html>
