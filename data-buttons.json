@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Minecraft",
+    "htmlurl": [
+      ["/minecraft.html"]
+    ]
+  },
+  {
+    "name": "Store",
+    "htmlurl": [
+      ["/store.html"]
+    ]
+  },
+  {
+    "name": "Vote",
+    "htmlurl": [
+      ["/vote.html"]
+    ]
+  }
+]
