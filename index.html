@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Cyan</title>
   <style>
+    :root {
+      color-scheme: dark;
+      --bg: #1e1e20;
+      --fg: #ffffff;
+      --btn: #00bcd4;
+      --btn-hover: #0097a7;
+    }
+
     body {
       margin: 0;
-      background: #f0f0f0;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 100px 20px 20px;
+      background-color: var(--bg);
+      color: var(--fg);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 100px;
+      min-height: 100vh;
     }
+
     h1 {
+      font-size: 4em;
       background: linear-gradient(to right, darkcyan, cyan);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      font-size: 4em;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
+
     .buttons {
-      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
+
     button {
-      background-color: mediumcyan;
-      background-color: #00bcd4;
-      border: none;
+      background-color: var(--btn);
       color: white;
+      border: none;
       padding: 12px 24px;
-      margin: 5px;
       font-size: 1em;
-      border-radius: 6px;
+      border-radius: 8px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.2s ease;
+      width: 200px;
+      text-align: center;
     }
+
     button:hover {
-      background-color: #0097a7;
+      background-color: var(--btn-hover);
+    }
+
+    #buttonContainer {
+      text-align: center;
     }
   </style>
 </head>
@@ -56,9 +79,9 @@
             const button = document.createElement("button");
             button.textContent = btn.name;
             button.onclick = () => {
-              const origin = location.origin; // e.g., https://cyanstudiosdev.github.io
-              const path = btn.htmlurl[0][0]; // e.g., /minecraft.html
-              location.href = origin + path;
+              const base = "https://bleshodja.github.io";
+              const path = btn.htmlurl[0][0]; // like "/minecraft.html"
+              window.location.href = base + path;
             };
             container.appendChild(button);
           }
