@@ -1,0 +1,355 @@
+/** List Table ****************************************************************/
+
+.view-feeds th input {
+	display: none;
+}
+
+.view-feeds td.sc-feeds {
+	display: none;
+}
+
+.view-feeds td.sc-feeds div {
+	padding: 12px;
+}
+
+.column-feeds {
+	width: 74px;
+}
+
+/** Link Styling **************************************************************/
+
+.view-feeds {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.view-feeds :not(td).sc-feeds div {
+	vertical-align: text-bottom;
+	line-height: 1;
+	padding: 15px;
+	margin: 0;
+	cursor: pointer;
+}
+
+.view-feeds .sc-feed-view.button {
+	background: rgba(255,255,255,0.9);
+	box-shadow: inset 0 2px 4px -2px rgba(0,0,0,0.5);
+}
+
+.view-feeds .sc-feeds label {
+	display: block;
+	margin: 0;
+	padding: 0 0 15px 0;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 1;
+	color: rgba(0,0,0,0.6);
+	cursor: pointer;
+}
+
+.view-feeds .sc-feeds .sc-url-wrapper {
+	display: inline-block;
+	box-sizing: border-box;
+	height: 29px;
+	width: 100%;
+	white-space: nowrap;
+}
+
+.view-feeds .sc-feeds input {
+	display: inline-block;
+	transition: color 100ms ease-out;
+	margin: 0;
+	padding: 0 5px;
+	color: rgba(0,0,0,0.6);
+	text-overflow: ellipsis;
+	z-index: 1;
+	cursor: text;
+	background: rgba(230,230,230,0.8);
+	border: 1px solid rgba(110,110,110,0.3);
+	box-sizing: border-box;
+	width: calc( 100% - 58px );
+	height: 100%;
+	word-break: normal;
+}
+
+.view-feeds .sc-feeds input.copying {
+	color: transparent;
+}
+
+.view-feeds .sc-feeds button,
+.view-feeds .sc-feeds a {
+	display: inline-block;
+	font-size: 16px;
+	line-height: 29px;
+	text-align: center;
+	padding: 0;
+	margin: 0;
+	z-index: 2;
+	background: rgba(230,230,230,0.8);
+	border: 1px solid rgba(110,110,110,0.3);
+	box-shadow: none;
+	box-sizing: border-box;
+	height: 100%;
+	width: 29px;
+	text-decoration: none;
+}
+
+#sc_calendar_wrap .view-feeds .sc-feeds button,
+#sc_calendar_wrap .view-feeds .sc-feeds a {
+	background: rgba(220,220,220,0.8);
+	border-color: rgba(110,110,110,0.3);
+	color: rgba(0,0,0,0.6);
+}
+
+.view-feeds .sc-feeds .sc-copy {
+	border-right-width: 0;
+	border-radius: 4px 0 0 4px;
+	cursor: copy;
+	color: rgba(0,0,0,0.6);
+}
+
+.view-feeds .sc-feeds .sc-visit {
+	border-left-width: 0;
+	border-radius: 0 4px 4px 0;
+	color: rgba(0,0,0,0.6);
+}
+
+.view-feeds .sc-feeds div:not(:last-of-type) {
+	border-bottom: 1px solid rgba(110,110,110,0.3);
+}
+
+/** Calendar ******************************************************************/
+
+/* Theme Side */
+
+#sc_calendar_wrap .tablenav-feeds {
+	position: absolute;
+	right: 0;
+}
+
+#sc_calendar_wrap .tablenav-feeds + .sc_events_calendar {
+	clear: both;
+}
+
+#sc_calendar_wrap .tablenav-feeds input {
+	font-family: sans-serif;
+	font-size: 14px;
+	padding: 0 5px;
+	margin: 0;
+	border-radius: 0;
+}
+
+/* Admin Side */
+.tablenav-feeds .screen-options {
+	margin: 0;
+	padding: 0;
+	min-height: 28px;
+	min-width: 28px;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+	border: none;
+}
+
+.tablenav .tablenav-tools .tablenav-feeds .screen-options > .dashicons {
+	padding: 5px;
+}
+
+#sc_calendar_wrap .tablenav-feeds a.sc-wrapper-outer {
+	text-decoration: none;
+	box-shadow: none;
+	border: none;
+	line-height: 20px;
+	padding: 8px;
+	display: block;
+}
+
+#sc_calendar_wrap .tablenav-feeds a.sc-wrapper-outer .sc-text {
+	font-size: 12px;
+	line-height: 1;
+	vertical-align: middle;
+}
+
+.tablenav-feeds:hover .screen-options > .dashicons,
+.tablenav-feeds .sc-wrapper-outer:active .screen-options > .dashicons {
+	color: rgba(0,0,0,0.6);
+	cursor: pointer;
+}
+
+.tablenav-feeds {
+	display: inline-block;
+}
+
+.sc-wrapper-inner {
+	display: none;
+	position: absolute;
+	width: 445px;
+	border: 1px solid rgba(110,110,110,0.3);
+	background: rgba(255,255,255,0.95);
+}
+
+/* Modal **********************************************************************/
+
+.sc-modal-bg {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+	height: 0;
+    z-index: 99998;
+    background: rgba(0,0,0,0.3);
+}
+.sc-modal-bg.active {
+    display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.sc-modal-window {
+    display: none;
+    position: fixed;
+    left: 50%;
+	top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: 99999;
+    border-radius: 5px;
+}
+.sc-modal-window.active {
+    display: block;
+}
+
+.sc-wrapper-inner .sc-feeds div:hover {
+	background-color: rgba(230,230,230,0.8);
+}
+
+/** Single Events *************************************************************/
+
+.sc_event_details .sc-add-to-calendar-list {
+	display: inline-block;
+	list-style: none;
+	margin: -5px 0 0 1px;
+	padding: 0;
+	vertical-align: top;
+	border-radius: 5px;
+	line-height: inherit;
+	overflow: hidden;
+	position: absolute;
+	background: transparent;
+	border: none;
+	transition: transform .3s;
+}
+
+.sc_event_details .sc-add-to-calendar-list:hover,
+.sc_event_details .sc-add-to-calendar-list:active {
+	background: rgba(255,255,255,0.95);
+	z-index: 99998;
+	transform: scale(1.03);
+	box-shadow: 0 1px 15px rgba(0,0,0,0.2);
+}
+
+.sc_event_details .sc-add-to-calendar-list li {
+	padding: 0;
+	margin: 0;
+}
+
+.sc-add-to-calendar-list li:not(:first-child) {
+	visibility: hidden;
+	height: 0;
+}
+
+.sc_event_details .sc-add-to-calendar-list:hover li,
+.sc_event_details .sc-add-to-calendar-list:active li {
+	display: list-item;
+	visibility: visible;
+	height: auto;
+}
+
+.sc_event_details .sc_event_details_inner .sc-add-to-calendar-list:hover a,
+.sc_event_details .sc_event_details_inner .sc-add-to-calendar-list:active a {
+	color: rgba(0,0,0,0.75);
+}
+
+.sc_event_details .sc_event_details_inner .sc-add-to-calendar-list a {
+	text-decoration: none;
+	box-shadow: none;
+	border: none;
+	display: block;
+	padding: 5px 41px 5px 36px;
+	margin: 0;
+	line-height: inherit;
+	position: relative;
+	color: inherit;
+}
+
+.sc_event_details .sc-add-to-calendar-list a:hover,
+.sc_event_details .sc-add-to-calendar-list a:active {
+	background: rgba(140,140,140,0.2);
+	color: rgba(0,0,0,0.95);
+}
+
+.sc_event_details .sc-add-to-calendar-list li:first-child a:after,
+.sc_event_details .sc-add-to-calendar-list a:before {
+	font: normal 1em/1em 'dashicons';
+	display: inline-block;
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	width: 1em;
+	height: 1em;
+	margin: 0;
+}
+
+.sc_event_details .sc-add-to-calendar-list li:first-child a:after {
+	right: 10px;
+	content: '\f347';
+	opacity: 0.7;
+}
+
+.sc_event_details .sc-add-to-calendar-list:hover li:first-child a:after,
+.sc_event_details .sc-add-to-calendar-list:active li:first-child a:after {
+	content: '\f343';
+}
+
+.sc_event_details .sc-add-to-calendar-list a:before {
+	left: 10px;
+}
+
+.sc_event_details .sc-add-to-calendar-list span.sc-subscribe-link-google a:before {
+	content: '\f462';
+	color: #ea4335;
+}
+
+.sc_event_details .sc-add-to-calendar-list span.sc-subscribe-link-microsoft a:before {
+	content: '\f338';
+	color: #4285f4;
+}
+
+.sc_event_details .sc-add-to-calendar-list span.sc-subscribe-link-apple a:before {
+	content: '\f11f';
+	color: #3295e4;
+}
+
+.sc_event_details .sc-add-to-calendar-list span.sc-subscribe-link-webcal a:before {
+	content: '\f11f';
+	color: #3295e4;
+}
+
+.sc_event_details .sc-add-to-calendar-list span.sc-subscribe-link-download a:before {
+	content: '\f316';
+}
+
+.sc_event_details .sc-add-to-calendar-list span.sc-subscribe-link-direct a:before {
+	content: '\f103';
+}
+
+.sc_event_details .sc-add-to-calendar-list:hover:after {
+	display: none;
+}
