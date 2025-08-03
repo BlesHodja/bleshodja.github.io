@@ -2062,8 +2062,8 @@ img {
 }
 
 @font-face {
-  font-family: Thaleahfat;
-  src: url(../files/fonts/ThaleahFat.ttf);
+  font-family: mcbold;
+  src: url(../fonts/mcbold.ttf);
   font-style: normal;
   font-display: swap
 }
