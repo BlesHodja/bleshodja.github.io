@@ -2063,7 +2063,7 @@ img {
 
 @font-face {
   font-family: mcbold;
-  src: url(../fonts/mcbold.ttf);
+  src: url(../mcbold.ttf);
   font-style: normal;
   font-display: swap
 }
